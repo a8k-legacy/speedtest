@@ -1,57 +1,67 @@
-# SpeedTest-game
+# SpeedTest Game
 
-**By [Saif Abdelrazek](https://github.com/SaifAbdelrazek011)**  
+A unique typing speed test that evaluates capability based on difficulty and word count rather than WPM. This project marked my first substantial use of TypeScript and involved solving complex logic and algorithmic challenges.
 
-This is a speed test, but it operates on a different concept than the standard one. We don't depend on WPM (words per minute), but we are using a way that states either you are capable or not by setting words according to the difficulty specified and the number of words selected (max 30 per game and this is specified for written numbers more than 30).
-
-I am very happy that I have finally finished this project because it took a lot of time from me to solve a lot of logic and algorithmic mistakes to finish it. In addition, it was the first project I started to build using TypeScript. However, during the middle of the construction process, I have stopped because it took a lot of time and started on other projects. Until finally, I returned to complete it, and it is as you see now.
-
-
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/SaifAbdelrazek011/speed-typing-game/blob/main/LICENSE)
-![TypeScript](https://img.shields.io/badge/TypeScript-4.9%2B-3178C6.svg)
-
-A responsive typing speed test game with adaptive difficulty levels and theme switching, implemented in TypeScript with strict type safety.
-
-**Live Demo**: [Play Now](https://saifabdelrazek011.github.io/SpeedTest-game/)
+**Game Concept**: The test does not depend on Words Per Minute (WPM). Instead, it assesses capability by presenting words according to the selected difficulty and number of words (max 30 per game). Success depends on typing accuracy within strict time limits per word.
 
 ## Technical Architecture
 
 ### Core Components
-- **Game Engine**: Real-time word matching algorithm with O(n) complexity
+
+- **Game Engine**: Real-time word matching algorithm
 - **State Management**: Pure TypeScript implementation with type-safe transitions
-- **DOM Manipulation**: Optimized batch updates using DocumentFragment
+- **DOM Manipulation**: Optimized batch updates
 - **Persistence Layer**: LocalStorage for theme preferences
 
 ### Key Features
-- 🎚️ 4 Difficulty Levels (Easy/Normal/Hard/Insane)
-- ⏲️ Adaptive Time Limits (JSON-configurable)
-- 🎮 Input Validation System with anti-cheat mechanisms
-- 🌓 Theme System (Light/Dark) with CSS Variables
-- 🔊 Sound Feedback System
 
-### Difficulties Explaination
-- **Easy**: simple words with 5 sec per word. Max wrongs: number of words * 0.5
-- **Normal**: medium words in difficulty with 4 sec per word. Max wrongs: number of words * 0.25
-- **Hard**: hard and long words with 4 sec per word. Max wrongs: 1
-- **Insane**: as hard as hard in words difficulty but in 2 sec per word only. Max wrongs: 1
+- 4 Difficulty Levels (Easy, Normal, Hard, Insane)
+- Adaptive Time Limits (JSON-configurable)
+- Input Validation System with anti-cheat mechanisms
+- Theme System (Light/Dark) with CSS Variables
+- Sound Feedback System
+
+### Difficulty Levels Explained
+
+- **Easy**: Simple words with 5 seconds per word. Max wrongs: number of words × 0.5
+- **Normal**: Medium-difficulty words with 4 seconds per word. Max wrongs: number of words × 0.25
+- **Hard**: Hard and long words with 4 seconds per word. Max wrongs: 1
+- **Insane**: Words as hard as 'Hard' difficulty but with only 2 seconds per word. Max wrongs: 1
+
+## How to Run
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/a8k-legacy/speedtest.git
+   cd speedtest
+   ```
+
+2. **Install dependencies and compile TypeScript** (requires TypeScript installed globally):
+   ```bash
+   npm install -g typescript
+   tsc --project tsconfig.json
+   ```
+
+3. **Open `index.html` in a browser** or use a static server like `live-server`.
 
 ## Codebase Structure
 
-```plaintext
-SpeedTest-game/
+```
+speedtest/
 ├── audio/                  # Sound files
-│   ├── fall.mp3
-│   └── success.mp3
 ├── Images/                 # Theme assets
-│   ├── moon.png
-│   └── sun.png
-├── src/                    # TypeScript source
-│   └── Main.ts             # Core game logic
+├── src/                    # TypeScript source (Main.ts)
 ├── dist/                   # Compiled JS
-│   └── Main.js
 ├── index.html              # Main entry point
 ├── style.css               # Styles
 ├── words.json              # Word database
-├── package.json
-├── package-lock.json
-└── tsconfig.json
+└── tsconfig.json           # TypeScript configuration
+```
+
+## Enhanced Version
+
+A restyled and enhanced version of this game is featured in the [a8k-games-hub](https://games.a8k.dev).
+
+---
+
+*Part of the A8K Legacy archive—a collection of early projects and learning experiments by [Saif Abdelrazek](https://saifabdelrazek.com).*
